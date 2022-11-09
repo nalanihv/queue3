@@ -27,11 +27,56 @@ public class MainActivity extends AppCompatActivity {
         btAtender=findViewById(R.id.btQuitar);
         Queue queue= new Queue();
 
+      //  System.out.println();
+        //tvFibonacci= findViewById(R.id.tvFibonacci);
+       //StringBuilder fibo = new StringBuilder();
+      // fibo.append(fibonacci(30));
+        //tvFibonacci.setText(fibo);
+
+        contar(5,0);
+    }
+
+    public void contar(int contador,int numero){
+
+        if(contador>numero){
+            Log.i("log","se acabo ");
+
+        } else
+            {
+                //contar(contador+1);
+            contar(contador+1,contador+1);
+
+            Log.i("log "," contador: "+contador);
+            Log.i("log","numero"+numero);
+
+        }
+
+        }
+
+        /*
+       // StringBuilder fib=new StringBuilder();
+        //fib.append("0 - ");
+        //fib.append("1- ");
+        int a=0, b=1, aux=0;
+        for (int i = 0; i <numero -2; i++) {
+            aux=a+b;
+            a=b;
+            b=aux;
+          //  fib.append(String.valueOf(aux)+" - ");
+        }
+        //return new String(fib);*/
 
 
 
 
-        btAgregar.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+
+/*
+  btAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String input=etUsuario.getText().toString().trim();
@@ -41,66 +86,63 @@ public class MainActivity extends AppCompatActivity {
                     int aux=Integer.parseInt(input);
 
                     boolean encontro = false;
-
                     /*
                     queue.add(aux);//se supone que aqui agrega
                     Log.i("log",aux+"");
-                    etUsuario.setText("");*/
+                    etUsuario.setText("");//
 
-                    queue.add(aux);//aqui agrega
-                    Log.i("log",aux+"");
-                    etUsuario.setText("");
+        queue.add(aux);//aqui agrega
+        Log.i("log",aux+"");
+        etUsuario.setText("");
 
-                    
-                    String result = "";
-                    QueueNode buscar = queue.getFirst();
-                    while (buscar !=null) {
-                        result += buscar.getData();
-                        buscar = buscar.getNext();
 
-                        if (input.equals(buscar)) {
-                            Log.i("log", "el numero sí se encontro");
-                            encontro = true;
-                        } else {
-                            //QueueNode buscar= queue.getFirst();
-                            // buscar=buscar.getNext();
+        String result="";
+        QueueNode auxQueue=queue.getFirst();
+        while (auxQueue!=null){ // aux==last.getNext; sign.
+            result+=aux+" -> ";
+            auxQueue=auxQueue.getNext();
 
-                        }
-                    }
-                }
+            if (input.equals(auxQueue)) {
+                Log.i("log", "el numero sí se encontro");
+                encontro = true;
+            } else {
+                //QueueNode buscar= queue.getFirst();
+                // buscar=buscar.getNext();
 
             }
+
+        }}}
         });
 
 
 
 
 
-        btAtender.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //String input = etUsuario.getText().toString().trim();
-                //if (input.equals(""))
-                    //Toast.makeText(getApplicationContext(), "ingresa cliente", Toast.LENGTH_SHORT).show();
-                //else {
-                    Toast.makeText(getApplicationContext(), "id. del cliente atendido"+  queue.getFirst(), Toast.LENGTH_SHORT).show();
-                    //queue.printl();
-                    queue.remove();
-             //   }
-            }
+                btAtender.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+        //String input = etUsuario.getText().toString().trim();
+        //if (input.equals(""))
+        //Toast.makeText(getApplicationContext(), "ingresa cliente", Toast.LENGTH_SHORT).show();
+        //else {
+        Toast.makeText(getApplicationContext(), "id. del cliente atendido"+  queue.getFirst(), Toast.LENGTH_SHORT).show();
+        //queue.printl();
+        queue.remove();
+        //   }
+        }
         });
 
 
 
         btMostrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                queue.printl();
-                //String input = etUsuario.getText().toString().trim();
-                //Queue  queue= new Queue();
+@Override
+public void onClick(View view) {
+        queue.printl();
+        //String input = etUsuario.getText().toString().trim();
+        //Queue  queue= new Queue();
 
-            }
+        }
         });
+ */
 
     }
-}

@@ -26,34 +26,44 @@ public class MainActivity extends AppCompatActivity {
         btMostrar=findViewById(R.id.btMostrar);
         btAtender=findViewById(R.id.btQuitar);
         Queue queue= new Queue();
-
-      //  System.out.println();
+        //  System.out.println();
         //tvFibonacci= findViewById(R.id.tvFibonacci);
        //StringBuilder fibo = new StringBuilder();
       // fibo.append(fibonacci(30));
         //tvFibonacci.setText(fibo);
 
         contar(5,0);
+        factorial(4);
     }
-
     public void contar(int contador,int numero){
-
         if(contador>numero){
             Log.i("log","se acabo ");
-
         } else
-            {
-                //contar(contador+1);
+        {
+            //contar(contador+1);
             contar(contador+1,contador+1);
-
             Log.i("log "," contador: "+contador);
             Log.i("log","numero"+numero);
-
         }
+    }
 
+    public int factorial(int numero){
+
+        //sol. prof. quita el total
+        int total;
+        if(numero==0 || numero==1){ //if numero<=1
+            total=1;
+            return total;
+        }else {
+            total= numero * factorial(numero-1);
+            return total;
+            /* for (int i = 0; i >0 ; i--) {
+                total+=i;
+            }
+            Log.i("log",""+total);*/
         }
-
-        /*
+    }
+    /*
        // StringBuilder fib=new StringBuilder();
         //fib.append("0 - ");
         //fib.append("1- ");
@@ -65,17 +75,7 @@ public class MainActivity extends AppCompatActivity {
           //  fib.append(String.valueOf(aux)+" - ");
         }
         //return new String(fib);*/
-
-
-
-
-
-
-
-
-
-
-/*
+    /*
   btAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,15 +108,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 //QueueNode buscar= queue.getFirst();
                 // buscar=buscar.getNext();
-
             }
-
         }}}
         });
-
-
-
-
 
                 btAtender.setOnClickListener(new View.OnClickListener() {
 @Override
@@ -132,8 +126,6 @@ public void onClick(View view) {
         }
         });
 
-
-
         btMostrar.setOnClickListener(new View.OnClickListener() {
 @Override
 public void onClick(View view) {
@@ -144,5 +136,4 @@ public void onClick(View view) {
         }
         });
  */
-
-    }
+}
